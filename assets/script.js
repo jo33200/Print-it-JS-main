@@ -17,4 +17,26 @@ const slides = [
 	}
 ]
 
-let prev
+// D
+let arrowLeft = document.querySelector(".arrow_left");
+let arrowRight = document.querySelector(".arrow_right");
+
+// Définir dots containers avec son id ou sa class
+// Définir le img slider comme element du dom
+// Définir tagline
+
+// initialiser l'index A0
+// creer function pour dots
+let index = 0;
+
+arrowLeft.addEventListener("click", () => {
+	index--
+	console.log("click");
+	console.log("index",index)
+	
+})
+arrowRight.addEventListener("click", () => {
+	index++
+	console.log("click");
+	console.log("index",index)
+})

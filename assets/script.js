@@ -17,16 +17,29 @@ const slides = [
 	}
 ]
 
-// D
+// Définir les 2 buttons arrows
+
 let arrowLeft = document.querySelector(".arrow_left");
 let arrowRight = document.querySelector(".arrow_right");
 
 // Définir dots containers avec son id ou sa class
+
+let dotsContainer = document.createElement("div");
+let parentElement = document.getElementById("banner");
+parentElement.appendChild(dotsContainer);
+dotsContainer.classList.add("dotsContainer");
+
 // Définir le img slider comme element du dom
+
 // Définir tagline
 
+
 // initialiser l'index A0
-// creer function pour dots
+
+// creer function pour slides
+
+// creer function pour button
+
 let index = 0;
 
 arrowLeft.addEventListener("click", () => {
@@ -40,3 +53,6 @@ arrowRight.addEventListener("click", () => {
 	console.log("click");
 	console.log("index",index)
 })
+
+// creer function pour dots
+

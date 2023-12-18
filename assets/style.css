@@ -166,6 +166,7 @@ img.active{
 	display: flex;
 	justify-content: space-between;
 	z-index: 1;
+	cursor: pointer;
 }
 #banner .arrow_left {
 	left: 10px;

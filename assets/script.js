@@ -29,6 +29,8 @@ let parentElement = document.getElementById("banner");
 parentElement.appendChild(dotsContainer);
 dotsContainer.classList.add("dotsContainer");
 
+// Ajouter des dots
+
 let dot = document.createElement("div");
 let parentElement2 = document.querySelector(".dotsContainer");
 parentElement2.appendChild(dot);
@@ -49,10 +51,12 @@ let parentElement5 = document.querySelector(".dotsContainer");
 parentElement5.appendChild(dot4);
 dot4.classList.add("dot");
 
-
 // Définir le img slider comme element du dom
 
-
+let slider = document.createElement("div");
+let parentElement6 = document.getElementById("banner");
+parentElement6.appendChild(slider);
+slider.classList.add("slider");
 
 // Définir tagline
 
@@ -60,6 +64,13 @@ dot4.classList.add("dot");
 // initialiser l'index A0
 
 // creer function pour slides
+
+const nbSlides = slides.length;
+
+for (let count = 0; count < nbSlides; count++) {
+	console.log("count",count)
+	
+}
 
 // creer function pour button
 
@@ -69,12 +80,25 @@ arrowLeft.addEventListener("click", () => {
 	index--
 	console.log("click");
 	console.log("index",index)
+
+	if(count>0){
+		count--
+	} else{
+		count = nbSlides - 1
+	}
 	
 })
 arrowRight.addEventListener("click", () => {
 	index++
 	console.log("click");
 	console.log("index",index)
+
+	if(count<nbSlides - 1){
+		count++
+	}
+	else{
+		count = 0
+	}
 })
 
 // creer function pour dots

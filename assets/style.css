@@ -176,7 +176,8 @@ img.active{
 }
 
 /* Gestion des points du carrousel */
-.dots {
+/* renommer la classe .dots en .dotsContainer */
+.dotsContainer {
 	position: absolute;
 	bottom: 40px;
 	display: flex;

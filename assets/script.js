@@ -18,16 +18,17 @@ const slides = [
 ]
 
 // Définir les 2 buttons arrows
-
+document.addEventListener("DOMContentLoaded", (event)=>{
 let arrowLeft = document.querySelector(".arrow_left");
 let arrowRight = document.querySelector(".arrow_right");
+let dotsContainer = document.getElementById("banner");
 
 // Définir dots containers avec son id ou sa class
 
-let dotsContainer = document.createElement("div");
-let parentElement = document.getElementById("banner");
-parentElement.appendChild(dotsContainer);
+let dotsContainerdiv = document.createElement("div")
+
 dotsContainer.classList.add("dotsContainer");
+dotsContainer.appendChild(dotsContainerdiv)
 
 // Ajouter des dots
 
@@ -36,70 +37,60 @@ let parentElement2 = document.querySelector(".dotsContainer");
 parentElement2.appendChild(dot);
 dot.classList.add("dot");
 
-let dot2 = document.createElement("div");
-let parentElement3 = document.querySelector(".dotsContainer");
-parentElement3.appendChild(dot2);
-dot2.classList.add("dot");
+slides.forEach((slide,index) => {
+	let dot = document.createElement("div");
+	dot.classList.add("dot")
+	dot.addEventListener("click", ()=>updateSlide(index))
+	dotsContainerdiv.appendChild(dot)
+})
 
-let dot3 = document.createElement("div");
-let parentElement4 = document.querySelector(".dotsContainer");
-parentElement4.appendChild(dot3);
-dot3.classList.add("dot");
-
-let dot4 = document.createElement("div");
-let parentElement5 = document.querySelector(".dotsContainer");
-parentElement5.appendChild(dot4);
-dot4.classList.add("dot");
 
 // Définir le img slider comme element du dom
 
-let slider = document.createElement("div");
-let parentElement6 = document.getElementById("banner");
-parentElement6.appendChild(slider);
-slider.classList.add("slider");
+function updateSlide (index) {
+	currentSlideIndex = index;
+	// mettre à jour image et légende
+	let bannerImg= document.getElementById("banner-img")
+	bannerImg.src=`./assets/images/slideshow/${slides[index].image}`
+	let tagline = document.getElementById("banner-tagline")
+	tagline.innerHTML=slides[index].tagLine
+	// mettre a jour le point actif
+	let dots= document.querySelectorAll(".dot")
+	dots.forEach((dot,dotIndex)=>{
+		if(dotIndex === index){
+			dot.classList.add("active")
+		}else {
+			dot.classList.remove("active")
+		}
+	})
+}
 
 // Définir tagline
 
 
 // initialiser l'index A0
 
+
 // creer function pour slides
 
-const nbSlides = slides.length;
-
-for (let count = 0; count < nbSlides; count++) {
-	console.log("count",count)
-	
-}
 
 // creer function pour button
 
-let index = 0;
+let currentSlideIndex = 0;
 
 arrowLeft.addEventListener("click", () => {
-	index--
-	console.log("click");
-	console.log("index",index)
-
-	if(count>0){
-		count--
-	} else{
-		count = nbSlides - 1
-	}
+	console.log("click")
+	let newIndex=currentSlideIndex -1;
+	if( newIndex < 0 ) newIndex = slides.length -1
+	updateSlide(newIndex)
 	
 })
 arrowRight.addEventListener("click", () => {
-	index++
-	console.log("click");
-	console.log("index",index)
-
-	if(count<nbSlides - 1){
-		count++
-	}
-	else{
-		count = 0
-	}
+	let newIndex=currentSlideIndex +1;
+	if( newIndex >= slides.length ) newIndex = 0
+	updateSlide(newIndex)
 })
 
+ });
 // creer function pour dots
 

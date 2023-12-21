@@ -188,6 +188,9 @@ img.active{
 .dot_selected {
 	background-color: #fff;
 }
+.active{
+	background-color: white;
+}
 
 /* Fin du code CSS pour le carousel */
 #banner p {

@@ -27,15 +27,10 @@ let dotsContainer = document.getElementById("banner");
 
 let dotsContainerdiv = document.createElement("div")
 
-dotsContainer.classList.add("dotsContainer");
+dotsContainerdiv.classList.add("dotsContainer");
 dotsContainer.appendChild(dotsContainerdiv)
 
 // Ajouter des dots
-
-let dot = document.createElement("div");
-let parentElement2 = document.querySelector(".dotsContainer");
-parentElement2.appendChild(dot);
-dot.classList.add("dot");
 
 slides.forEach((slide,index) => {
 	let dot = document.createElement("div");

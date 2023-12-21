@@ -44,11 +44,13 @@ slides.forEach((slide,index) => {
 
 function updateSlide (index) {
 	currentSlideIndex = index;
+
 	// mettre à jour image et légende
 	let bannerImg= document.getElementById("banner-img")
 	bannerImg.src=`./assets/images/slideshow/${slides[index].image}`
 	let tagline = document.getElementById("banner-tagline")
 	tagline.innerHTML=slides[index].tagLine
+
 	// mettre a jour le point actif
 	let dots= document.querySelectorAll(".dot")
 	dots.forEach((dot,dotIndex)=>{
@@ -59,14 +61,6 @@ function updateSlide (index) {
 		}
 	})
 }
-
-// Définir tagline
-
-
-// initialiser l'index A0
-
-
-// creer function pour slides
 
 
 // creer function pour button
@@ -87,5 +81,5 @@ arrowRight.addEventListener("click", () => {
 })
 
  });
-// creer function pour dots
+
 

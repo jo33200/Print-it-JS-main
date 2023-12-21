@@ -53,9 +53,9 @@ function updateSlide (index) {
 	let dots= document.querySelectorAll(".dot")
 	dots.forEach((dot,dotIndex)=>{
 		if(dotIndex === index){
-			dot.classList.add("active")
+			dot.classList.add("dot_selected")
 		}else {
-			dot.classList.remove("active")
+			dot.classList.remove("dot_selected")
 		}
 	})
 }
